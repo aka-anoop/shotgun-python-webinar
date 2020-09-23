@@ -13,7 +13,7 @@ SG = shotgun_api3.Shotgun(
 )
 
 def main():
-    result = SG.find_one("HumanUser", [], [])
+    result = SG.find_one("HumanUser", [], ['login', 'email'])
     for key, value in result.iteritems():
         print key, value
 
