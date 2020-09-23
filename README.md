@@ -11,14 +11,17 @@ Example code used for demonstrating various API features during Autodesk Shotgun
 Examples are organised under src directory in to separate chapter files.
 
 # Usage
+###  Setup local dev environment
 - Setup Virtualenv `virtualenv venv`
 - Activate Virtualenv `source venv/bin/activate`
 - Install dependencies `pip install -r requirements.txt`
 
-Make a copy of `example.env` file included in the repository and name it `.env`
-Update the file to include your Shotgun Script credentials.
+### Create new API Key
 ![Shotgun Script Dialog](/images/shotgun-script.png?raw=true "Shotgun Script Dialog")
 
+###  Update API Key in the environment
+Make a copy of `example.env` file included in the repository and name it `.env`
+Update the file to include your Shotgun Script credentials. 
 ```
 SERVER=<YOUR SERVER URL>
 SCRIPT_NAME=`<YOUR SCRIPT NAME>
