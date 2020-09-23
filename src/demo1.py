@@ -13,7 +13,9 @@ SG = shotgun_api3.Shotgun(
 )
 
 def main():
-    print SG.info()
+    result = SG.find_one("HumanUser", [], [])
+    for key, value in result.iteritems():
+        print key, value
 
 if __name__ == "__main__":
     main()
