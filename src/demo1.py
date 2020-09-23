@@ -13,8 +13,10 @@ SG = shotgun_api3.Shotgun(
 )
 
 def main():
-    result = SG.find_one("HumanUser", [['login', 'is', 'anoop']], ['login', 'email'])
-    for key, value in result.iteritems():
+    user_result = SG.find_one("HumanUser", [['login', 'is', 'anoop']], ['login', 'email', 'department'])
+    dept_result = SG.find_one("Department", [['id', 'is', user_result['department']['id']]], ['code', 'name'])
+    user_result.update(dept_result)
+    for key, value in user_result.iteritems():
         print key, value
 
 if __name__ == "__main__":
